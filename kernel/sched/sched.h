@@ -1144,16 +1144,12 @@ struct rq {
 #endif
 	unsigned int		ttwu_pending;
 	unsigned long		cpu_capacity;
-#ifdef CONFIG_SCHED_PROXY_EXEC
 	struct task_struct __rcu	*donor;  /* Scheduling context */
 	struct task_struct __rcu	*curr;   /* Execution context */
-#else
-	union {
-		struct task_struct __rcu *donor; /* Scheduler context */
-		struct task_struct __rcu *curr;  /* Execution context */
-	};
-#endif
 	struct task_struct	*idle;
+
+	struct proc_struct __rcu	*rq_proc;	/* Proc atual neste RQ */
+	port_id_t			rq_port_id;	/* Porta associada a este RQ */
 	/* padding left here deliberately */
 
 	/*
@@ -3880,6 +3876,16 @@ static inline unsigned int mm_get_cid(struct mm_struct *mm)
 		cid = __mm_get_cid(mm, num_possible_cpus());
 	}
 	return cid;
+}
+
+static inline void rq_set_proc(struct rq *rq, struct proc_struct *proc)
+{
+	rcu_assign_pointer(rq->rq_proc, proc);
+}
+
+static inline struct proc_struct *rq_get_proc(struct rq *rq)
+{
+	return rcu_dereference(rq->rq_proc);
 }
 
 static inline unsigned int mm_cid_converge(struct mm_struct *mm, unsigned int orig_cid,
