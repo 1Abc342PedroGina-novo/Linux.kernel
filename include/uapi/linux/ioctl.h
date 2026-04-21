@@ -1,5 +1,5 @@
-#ifndef _LINUX_IOCTL_H
-#define _LINUX_IOCTL_H
+#ifndef _UAPI_LINUX_IOCTL_H
+#define _UAPI_LINUX_IOCTL_H
 
 #include <asm/ioctl.h>
 /*
