@@ -33,8 +33,8 @@
     SUCH DAMAGE.
 */
 
-#ifndef _LINUX_FUSE_H
-#define _LINUX_FUSE_H
+#ifndef _UAPI_LINUX_FUSE_H
+#define _UAPI_LINUX_FUSE_H
 
 #ifdef __KERNEL__
 #include <linux/types.h>
@@ -492,3 +492,5 @@ struct sys_init_out {
 #define OBJECT_DEV_IOC_CLONE		_IOR(OBJECT_DEV_IOC_MAGIC, 0, uint32_t)
 #define OBJECT_DEV_IOC_GET_STATS	_IOR(OBJECT_DEV_IOC_MAGIC, 1, uint64_t)
 #define OBJECT_DEV_IOC_RESET		_IO(OBJECT_DEV_IOC_MAGIC, 2)
+
+#endif /* UAPI_LINUX_FUSE_H */
