@@ -1,6 +1,8 @@
-/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0-or-later WITH Linux-syscall-note) OR BSD-2-Clause) */
 /*
     This file defines the kernel interface of FUSE
+    Copyright (C) 21/04/2026 1Abc342PedroGina-novo
+    Copyright (C) 10/12/2025 1Abc342PedroGina-novo
     Copyright (C) 2001-2008  Miklos Szeredi <miklos@szeredi.hu>
 
     This program can be distributed under the terms of the GNU GPL.
