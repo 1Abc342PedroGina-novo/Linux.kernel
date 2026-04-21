@@ -638,3 +638,6 @@ struct procmap_query {
 #define FS_SHUTDOWN_FLAGS_DEFAULT	0x0
 #define FS_SHUTDOWN_FLAGS_LOGFLUSH	0x1
 #define FS_SHUTDOWN_FLAGS_NOLOGFLUSH	0x2
+
+
+#endif /* _UAPI_LINUX_FS_H */
